@@ -40,7 +40,7 @@ RUN tar xf gmp-6.3.0.tar.xz && \
     cd gmp-6.3.0 && \
     ./configure \
         --enable-shared \
-        --enable-static \
+        --disable-static \
         --prefix=/usr/local/$HOST \
         --host=$HOST \
         --disable-cxx \
@@ -52,7 +52,7 @@ RUN tar xf expat-2.5.0.tar.bz2 && \
     cd expat-2.5.0 && \
     ./configure \
         --enable-shared \
-        --enable-static \
+        --disable-static \
         --prefix=/usr/local/$HOST \
         --host=$HOST \
         --build=`dpkg-architecture -qDEB_BUILD_GNU_TYPE` && \
@@ -62,7 +62,7 @@ RUN tar xf sqlite-autoconf-3430100.tar.gz && \
     cd sqlite-autoconf-3430100 && \
     ./configure \
         --enable-shared \
-        --enable-static \
+        --disable-static \
         --prefix=/usr/local/$HOST \
         --host=$HOST \
         --build=`dpkg-architecture -qDEB_BUILD_GNU_TYPE` && \
@@ -79,14 +79,14 @@ RUN tar xf zlib-1.3.tar.gz && \
         --prefix=/usr/local/$HOST \
         --libdir=/usr/local/$HOST/lib \
         --includedir=/usr/local/$HOST/include \
-        --static && \
+        && \
     make -j$(nproc) install
 
 RUN tar xf c-ares-1.19.1.tar.gz && \
     cd c-ares-1.19.1 && \
     ./configure \
         --enable-shared \
-        --enable-static \
+        --disable-static \
         --without-random \
         --prefix=/usr/local/$HOST \
         --host=$HOST \
@@ -98,7 +98,7 @@ RUN tar xf libssh2-1.11.0.tar.bz2 && \
     cd libssh2-1.11.0 && \
     ./configure \
         --enable-shared \
-        --enable-static \
+        --disable-static \
         --prefix=/usr/local/$HOST \
         --host=$HOST \
         --build=`dpkg-architecture -qDEB_BUILD_GNU_TYPE` \
