@@ -23,7 +23,7 @@ jobs:
     - name: Build
       uses: docker/build-push-action@v5
       with:
-        file: Dockerfile.mingw
+        file: Dockerfile.mingw.share
         context: .
         push: true
-        tags: lzh1104/php-rc:test2-mingw
+        tags: lzh1104/php-rc:aria2c-mingw-share
